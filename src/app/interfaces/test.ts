@@ -1,26 +1,23 @@
-interface ClockInterface {
-    tick();
-}
-interface ClockConstructor {
-    new (hour: number, minute: number): ClockInterface;
-}
-function createClock(ctor: ClockConstructor, hour: number, minute: number): ClockInterface {
-    return new ctor(hour, minute);
-}
-interface Shape {
-    color: string;
+class Control {
+    private state: any;
 }
 
-interface PenStroke {
-    penWidth?: number;
+interface SelectableControl extends Control {
+    select(): void;
 }
 
-interface Square extends Shape, PenStroke {
-    sideLength?: number;
-    [propName: string]: any;
+class Button extends Control {
+    select() { }
 }
-let obj = {sideLength:12,propName:"w2",color:"red"}
-let square = <Square>obj;
-square.color="red";
-square.penWidth=12;
-square.sideLength=24;
+
+class TextBox extends Control {
+    select() { }
+}
+
+class Image1 {
+    select() { }
+}
+
+class Location2 {
+    select() { }
+}
