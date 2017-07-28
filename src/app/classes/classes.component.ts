@@ -10,23 +10,14 @@ export class ClassesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.init();
   }
+  init(){
+    document.getElementById("pid").innerText="nihao";
+    let con = document.getElementById("pid").innerText;
+   
 
-}
-class Animal {
-    name:string;
-    constructor(theName: string) { this.name = theName; }
-    move(distanceInMeters: number = 0) {
-        console.log(`${this.name} moved ${distanceInMeters}m.`);
-    }
-}
-  class Animal2 {
+    console.log();
     
-}
-  class Snake extends Animal{
-
   }
-  function identity<T>(arg: T): T {
-    return arg;
 }
- let a:number= parseInt(identity<string>("123"));
